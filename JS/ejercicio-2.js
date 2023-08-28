@@ -9,17 +9,29 @@ NOTA: Los porcentajes vigentes en El Salvador son los siguientes:
 - Renta: en base a la siguiente tabla proporcionada por hacienda*/
 
 let inputNombre = document.getElementById("nombreEmpleado");
+let inputCargo = document.getElementById("cargoEmpleado");
+let inputNumHoras = document.getElementById("numHoras");
+let inputPagoHora = document.getElementById("pagoHora");
 let btnCalcular = document.getElementById("btnCalcular");
-let nombreEmpleado = "";
+let nombreEmpleado;
+let cargoEmpleado;
+let numHoras;
+let pagoPorHoras;
 
 btnCalcular.addEventListener("click", function () {
   nombreEmpleado = inputNombre.value;
-  console.log("Que pedo si sirve", nombreEmpleado);
+  cargoEmpleado = inputCargo.value;
+  numHoras = inputNumHoras.value;
+  pagoPorHoras = inputPagoHora.value;
+  console.log(
+    "Que pedo si sirve",
+    nombreEmpleado,
+    cargoEmpleado,
+    numHoras,
+    pagoPorHoras
+  );
 });
 
-let cargoEmpleado = "CEO";
-let numHoras = 40;
-let pagoPorHoras = 11.5;
 const descuentoISSS = 3;
 const descuentoAFP = 7.23;
 let sueldoTotal = pagoPorHoras * numHoras;
