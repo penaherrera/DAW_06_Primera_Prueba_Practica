@@ -8,7 +8,15 @@ NOTA: Los porcentajes vigentes en El Salvador son los siguientes:
 - AFP: 7.25 %
 - Renta: en base a la siguiente tabla proporcionada por hacienda*/
 
-let nombreEmpleado = "Carlos";
+let inputNombre = document.getElementById("nombreEmpleado");
+let btnCalcular = document.getElementById("btnCalcular");
+let nombreEmpleado = "";
+
+btnCalcular.addEventListener("click", function () {
+  nombreEmpleado = inputNombre.value;
+  console.log("Que pedo si sirve", nombreEmpleado);
+});
+
 let cargoEmpleado = "CEO";
 let numHoras = 40;
 let pagoPorHoras = 11.5;
