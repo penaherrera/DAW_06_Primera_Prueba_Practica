@@ -14,7 +14,7 @@ let sueldoTotal;
 
 let calcularPorcentajeISSS = (sueldoTotal) => {
   let porcentajeISSS = (sueldoTotal * descuentoISSS) / 100;
-  if (porcentajeISSS >= 30) {
+  if (porcentajeISSS > 30) {
     return 30;
   } else {
     return porcentajeISSS;
@@ -78,7 +78,7 @@ btnCalcular.addEventListener("click", function () {
     !inputPagoHora.value
   ) {
     alert("Por favor, completa todos los campos antes de calcular.");
-    return; // Detener la ejecución si los campos no están completos
+    return;
   }
   nombreEmpleado = inputNombre.value;
   cargoEmpleado = inputCargo.value;
@@ -90,19 +90,18 @@ btnCalcular.addEventListener("click", function () {
   let porcentajeAFP = calcularPorcentajeAFP(sueldoTotal);
   let porcentajeRENTA = calcularPorcentajeRENTA(sueldoTotal);
 
-  console.log("Nombre:", nombreEmpleado);
-  console.log("Cargo:", cargoEmpleado);
-  console.log("Sueldo Total:", sueldoTotal.toFixed(2));
-  console.log("Descuento ISSS:", porcentajeISSS.toFixed(2));
-  console.log("Descuento AFP:", porcentajeAFP.toFixed(2));
-  console.log("Descuento RENTA:", porcentajeRENTA.toFixed(2));
-
   let descuentoTotal = calcularDescuentoTotal(
     porcentajeISSS,
     porcentajeAFP,
     porcentajeRENTA
   );
   console.log("Descuento Total:", descuentoTotal.toFixed(2));
+  console.log("Nombre:", nombreEmpleado);
+  console.log("Cargo:", cargoEmpleado);
+  console.log("Sueldo Total:", sueldoTotal.toFixed(2));
+  console.log("Descuento ISSS:", porcentajeISSS.toFixed(2));
+  console.log("Descuento AFP:", porcentajeAFP.toFixed(2));
+  console.log("Descuento RENTA:", porcentajeRENTA.toFixed(2));
 
   let sueldoNeto = calcularSueldoNeto(
     sueldoTotal,
@@ -130,17 +129,17 @@ btnCalcular.addEventListener("click", function () {
 </div>
 <div class="item">
   <div class="item-header">
-    <h2>descuento ISSS: ${porcentajeISSS.toFixed(2)}<h2>
+    <h2>Descuento ISSS: ${porcentajeISSS.toFixed(2)}<h2>
   </div>
 </div>
 <div class="item">
   <div class="item-header">
-    <h2>descuento AFP: ${porcentajeAFP.toFixed(2)}<h2>
+    <h2>Descuento AFP: ${porcentajeAFP.toFixed(2)}<h2>
   </div>
 </div>
 <div class="item">
   <div class="item-header">
-    <h2>descuento RENTA: ${porcentajeRENTA.toFixed(2)}<h2>
+    <h2>Descuento RENTA: ${porcentajeRENTA.toFixed(2)}<h2>
   </div>
 </div>
 <div class="item">
