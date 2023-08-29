@@ -3,27 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/ejercicio-2-style.css" />
     <title></title>
   </head>
   <body>
     <div class="container">
-      <div class="item">
-        <h2>Ingresar nombre del Empleado</h2>
-        <input type="text" id="nombreEmpleado" />
-      </div>
-      <div class="item">
-        <h2>Ingresar cargo del Empleado</h2>
-        <input type="text" id="cargoEmpleado" />
-      </div>
-      <div class="item">
-        <h2>Ingresar horas trabajadas del Empleado</h2>
-        <input type="number" id="numHoras" />
-      </div>
-      <div class="item">
-        <h2>Ingresar pago por hora del Empleado</h2>
-        <input type="number" id="pagoHora" />
-      </div>
-      <button id="btnCalcular">Calcular</button>
+      <form action="">
+        <div class="item-container">
+          <div class="item">
+            <div class="item-header">
+              <h2>Ingresar nombre del Empleado:</h2>
+            </div>
+            <input type="text" id="nombreEmpleado" required />
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h2>Ingresar cargo del Empleado:</h2>
+            </div>
+            <input type="text" id="cargoEmpleado" required />
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h2>Ingresar horas trabajadas por el Empleado:</h2>
+            </div>
+            <input type="number" id="numHoras" required />
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h2>Ingresar pago por hora del Empleado:</h2>
+            </div>
+            <input type="number" id="pagoHora" required />
+          </div>
+          <button class="btn" id="btnCalcular" type="button">Calcular</button>
+        </div>
+      </form>
+      <div class="item-container" id="contenedor-resultado"></div>
     </div>
   </body>
   <script src="JS/ejercicio-2.js"></script>

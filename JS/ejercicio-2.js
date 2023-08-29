@@ -71,6 +71,15 @@ let calcularDescuentoTotal = (
 };
 
 btnCalcular.addEventListener("click", function () {
+  if (
+    !inputNombre.value ||
+    !inputCargo.value ||
+    !inputNumHoras.value ||
+    !inputPagoHora.value
+  ) {
+    alert("Por favor, completa todos los campos antes de calcular.");
+    return; // Detener la ejecución si los campos no están completos
+  }
   nombreEmpleado = inputNombre.value;
   cargoEmpleado = inputCargo.value;
   numHoras = parseFloat(inputNumHoras.value);
@@ -102,4 +111,48 @@ btnCalcular.addEventListener("click", function () {
     porcentajeRENTA
   );
   console.log("Sueldo Neto:", sueldoNeto.toFixed(2));
+
+  const contenedorResultado = `<div class="item">
+  <div class="item-header">
+    <h2>Nombre: ${inputNombre.value}</h2>
+  </div>
+
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>Cargo: ${inputCargo.value}</h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>Salario base: ${sueldoTotal.toFixed(2)}</h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>descuento ISSS: ${porcentajeISSS.toFixed(2)}<h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>descuento AFP: ${porcentajeAFP.toFixed(2)}<h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>descuento RENTA: ${porcentajeRENTA.toFixed(2)}<h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>Descuento TOTAL: ${descuentoTotal.toFixed(2)}<h2>
+  </div>
+</div>
+<div class="item">
+  <div class="item-header">
+    <h2>Salario Neto: ${sueldoNeto.toFixed(2)}<h2>
+  </div>
+</div>`;
+  document.getElementById("contenedor-resultado").innerHTML =
+    contenedorResultado;
 });
