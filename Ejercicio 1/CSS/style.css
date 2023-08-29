@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form-content,
+.container .result-content {
+    width: 45%; /* 45% del ancho del contenedor principal */
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 25px;
+    margin: 0 10px; /* Espacio entre los elementos y los lados */
+    color: #515966; /* Color del texto */
+    border: 1px solid black;
+    box-shadow: 5px 15px 8px 5px #515966;
+}
+
+.container .form-content h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: black;
+    position: relative;
+}
+
+.container .form-content h1::after {
+    content: "";
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #001b48;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field {
+    background-color: #018abe;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 18px 15px;
+    color: #FFFF;
+}
+
+input::placeholder {
+    color: #FFFFFF;
+}
+
+.input-field {
+    margin-left: 35px;
+    color: #001b48;
+}
+
+.btn-field button {
+    flex-basis: 50%;
+    font-size: 16px;
+    background-color: #001b48;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 5px;
+    padding: 9px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.btn-field button.disable {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.result-content h2 {
+    font-size: 20px;
+    color: aliceblue;
+    margin-top: 20px;
+}
+
+.result-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-content th,
+.result-content td {
+    border: 1px solid #515966;
+    padding: 8px;
+    text-align: left;
+}
+
+.result-content th {
+    background-color: #001b48;
+    color: #FFFFFF; /* Color del texto del encabezado */
+}
+
+.result-content #cum {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: #001b48; /* Fondo verde */
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 5px 10px; /* Ajustar el relleno */
+    border-radius: 5px; /* Bordes redondeados */
+}
